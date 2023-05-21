@@ -155,8 +155,6 @@ const recipeDetailsContainer = document.getElementById("recipe-details");
 const recipeId = new URLSearchParams(window.location.search).get("id");
 const recipeData = data.recipes.find((recipe) => recipe.id == recipeId);
 
-console.log(recipeData);
-
 if (recipeData) {
   recipeDetailsContainer.innerHTML = `
      <img src="${recipeData.image}" alt="${

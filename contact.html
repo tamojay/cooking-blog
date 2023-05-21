@@ -1,8 +1,8 @@
+<!-- recipe.html -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Cooking Recipe Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Detail</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
@@ -13,7 +13,6 @@
         <button type="submit">Subscribe</button>
       </form>
     </div>
-
     <header>
       <div class="container">
         <a href="index.html"
@@ -28,37 +27,41 @@
       </div>
     </header>
 
-    <div id="carousel" class="container">
-      <div id="slide-container">
-        <div class="slides">
-          
-    <!-- First image --> 
-          <img class="slide" src="https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/holland-tour-highlights-1501738379-1000X561.jpg"> 
+    <div id="contact" class="container">
+      <form action="contact.php" method="post" id="contactForm">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="visitor_name"
+            placeholder="John Doe"
+            pattern="[A-Z\sa-z]{3,20}"
+            required
+          />
         </div>
-        
-    <!-- Second image --> 
-        <div class="slides">
-          <img class="slide" src="https://gsg-61ea.kxcdn.com/media/contents/sydney%20harbour%20aerial%20jamie-davies-Hao52Fu9-F8-unsplash%20(2).jpg"> 
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="visitor_email"
+            placeholder="john.doe@email.com"
+            required
+          />
         </div>
-        
-     <!-- Third image --> 
-        <div class="slides">
-          <img class="slide" src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/3f/6d/47.jpg"> 
+        <div class="elem-group">
+          <label for="message">Write your message</label>
+          <textarea
+            id="message"
+            name="visitor_message"
+            placeholder="Say whatever you want."
+            required
+          ></textarea>
         </div>
-        <a id="previous" class="arrow">&#10094</a>
-        <a id="next" class="arrow">&#10095</a>
-        <div id="text-bar">
-          <p id="place"></p>
-        </div>
-      </div>
-      <div id="dotsContainer"></div>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-
-    <div id="recipes" class="container">
-      <!-- Recipes will be dynamically generated here -->
-    </div>
-
-    <button id="showMore" class="show-more-btn">Show More</button>
 
     <div class="container" id="subscribe">
       <h2>Stay in the flavour loop and join our culinary community.</h2>
@@ -75,9 +78,7 @@
         <p><a href="privacy.html" target="_blank">Privacy Policy</a></p>
       </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script src="carousel.js"></script>
+    <script src="recipe.js"></script>
     <script>
       document
         .getElementById("subscription-form")

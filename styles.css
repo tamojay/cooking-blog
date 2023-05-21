@@ -15,9 +15,26 @@ body {
 }
 
 header {
-  background-color: #f8f8f8;
+  background-color: #f0ebeb;
   padding: 20px 0;
   margin-bottom: 3.5em;
+}
+
+.narrow-header {
+  position: sticky;
+  top: 0;
+  background-color: #cadbc3;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.narrow-header a {
+  display: inline-block;
+  justify-content: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
 }
 
 #logo {
@@ -39,8 +56,102 @@ nav ul li a {
   color: black;
 }
 
+/* Width of carousel */
 #carousel {
-  /* Add your carousel styles here */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+/* Height of carousel */
+#slide-container {
+  width: 80%;
+  height: 480px;
+  object-fit: contain;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  min-height: 200px;
+}
+
+.slides {
+  display: block;
+}
+
+/* Style of arrows */
+.arrow {
+  color: white;
+  font-size: 26px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: var(--transparent-grey);
+}
+
+#next {
+  left: 100%;
+  transform: translate(-100%, -50%);
+  border-radius: 4px 0px 0px 4px;
+}
+
+#previous {
+  border-radius: 0px 4px 4px 0px;
+}
+
+#text-bar {
+  background-color: var(--transparent-grey);
+  width: 100%;
+  height: 36px;
+  position: absolute;
+  top: 100%;
+  transform: translate(0%, -100%);
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+}
+
+#place {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+#dotsContainer {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+}
+
+.dots {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  display: inline-block;
+  margin: 8px 2px;
+}
+
+.dots:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.activeDot {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #recipes {
@@ -77,6 +188,12 @@ nav ul li a {
   margin: 10px 0;
 }
 
+#privacy {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4px;
+}
+
 /* Responsive design */
 @media (max-width: 1000px) {
   .recipe {
@@ -105,6 +222,32 @@ nav ul li a {
 
 .show-more-btn:hover {
   color: #92c0b1;
+}
+
+#subscribe-form {
+  padding: 0.5em;
+}
+
+#subscribe-form input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+#subscribe-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: #007bff;
+  color: #fff;
+}
+
+#subscribe-form button:hover {
+  background-color: #0056b3;
 }
 
 #subscribe {
@@ -191,6 +334,44 @@ nav ul li a {
   }
 }
 
+#contactForm label {
+  display: block;
+  font-family: "Aleo";
+  padding-top: 1em;
+  font-size: 1.25em;
+}
+
+#contactForm input,
+select,
+textarea {
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: "Aleo";
+  width: 500px;
+  padding: 8px;
+}
+
+#contactFormtextarea {
+  height: 250px;
+}
+
+#contactForm button {
+  height: 50px;
+  background: green;
+  color: white;
+  border: 2px solid darkgreen;
+  font-size: 1.25em;
+  font-family: "Aleo";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
 #subscribe input {
   flex-grow: 1;
   padding: 10px;
@@ -212,6 +393,33 @@ nav ul li a {
 
 #subscribe button:hover {
   background-color: #0056b3;
+}
+
+#contactForm {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  padding: auto 2em;
+}
+
+#contactForm input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+#contactForm button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: #007bff;
+  color: #fff;
 }
 
 /* Footer CSS */

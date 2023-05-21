@@ -6,9 +6,18 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
+    <div class="narrow-header">
+      <form id="subscribe-form">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
     <header>
       <div class="container">
-        <img src="img/logo.webp" alt="Logo" id="logo" />
+        <a href="index.html"
+          ><img src="img/logo.webp" alt="Logo" id="logo"
+        /></a>
         <nav>
           <ul>
             <li><a href="about.html">About</a></li>
@@ -34,8 +43,17 @@
     <footer>
       <div class="container">
         <p>&copy; 2023 My Cooking Recipe Blog</p>
+        <p><a href="privacy.html" target="_blank">Privacy Policy</a></p>
       </div>
     </footer>
     <script src="recipe.js"></script>
+    <script>
+      document
+        .getElementById("subscription-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from being submitted
+          // You can perform any desired actions here, such as displaying a success message or making an AJAX request to a server.
+        });
+    </script>
   </body>
 </html>
